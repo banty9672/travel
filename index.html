@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        scroll-behavior: smooth;
+        font-family: "Lato", sans-serif;
+      }
+      /* <!------------------ navbar section-----------------------> */
+      #navbar {
+        background: #f9f9f9;
+      }
+      #logo {
+        font-size: 36px;
+        font-weight: 550;
+        color: #000;
+        text-shadow: 0px 1px 1px #000;
+        margin-bottom: 5px;
+      }
+      #logo span {
+        color: #ffa500;
+      }
+      .navbar-toggler span {
+        color: #ffa500;
+      }
+      .navbar-nav {
+        margin-left: 20px;
+      }
+      .nav-item .nav-link {
+        font-size: 16px;
+        font-weight: 550;
+        color: #000;
+        letter-spacing: 1px;
+        border-radius: 3px;
+        transform: 0.5s ease;
+      }
+      .nav-item .nav-link:hover {
+        background: #ffa500;
+        color: white;
+      }
+      #navbar form button {
+        background: #ffa500;
+        color: white;
+        border: none;
+      }
+
+      /* <!------------------ Home section--------------- --> */
+      .home {
+        width: 100%;
+        height: 90vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.2)
+          ),
+          url(Images/BACK.PNG);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .home .content {
+        text-align: center;
+        padding-top: 200px;
+      }
+      .home .content h5 {
+        color: white;
+        font-size: 38px;
+        font-weight: 500;
+        text-shadow: 0px 1px 1px black;
+      }
+      .home .content h1 {
+        color: white;
+        font-size: 70px;
+        font-weight: 550;
+        text-shadow: 0px 1px 1px black;
+        margin-top: 5px;
+      }
+
+      .changecontent::before {
+        content: "";
+        color: #ffa500;
+        text-shadow: 0px 1px 1px black;
+        animation: changetext 10s infinite linear;
+      }
+      @keyframes changetext {
+        0% {
+          content: "France";
+        }
+        10% {
+          content: "Spain";
+        }
+        20% {
+          content: "United States";
+        }
+        30% {
+          content: "China";
+        }
+        40% {
+          content: "India";
+        }
+        50% {
+          content: "Pakistan";
+        }
+        60% {
+          content: "Italy";
+        }
+        70% {
+          content: "Turkey";
+        }
+        80% {
+          content: "Maxico";
+        }
+        90% {
+          content: "Germany";
+        }
+        100% {
+          content: "United Kingdom";
+        }
+      }
+      .home .content P {
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        text-shadow: 0px 1px 1px black;
+        margin-bottom: 30px;
+        margin-top: 5px;
+      }
+      .home .content a {
+        padding: 10px;
+        background: white;
+        color: black;
+        letter-spacing: 2px;
+        font-weight: 550;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: 0.5s;
+      }
+      .home .content a:hover {
+        background: #ffa500;
+        color: white;
+      }
+      @media (max-width: 850px) {
+        .home {
+          background-position: 50%;
+        }
+      }
+      @media (max-width: 450px) {
+        .home .content h5 {
+          font-size: 25px;
+        }
+        .home .content h1 {
+          font-size: 38px;
+        }
+        .home .content p {
+          font-size: 13px;
+        }
+      }
+
+      /* <!------------------ book section----------------------- --> */
+
+      .book {
+        background: #fff;
+        padding: 50px;
+      }
+      .main-text h1 {
+        text-align: center;
+        text-shadow: 0px 1px 1px black;
+        font-weight: 600;
+      }
+      .main-text h1 span {
+        color: #ffa500;
+      }
+      .book .card {
+        border-radius: 10px;
+        box-shadow: 0px 5px 5px -6px black;
+      }
+      .book .row {
+        margin-top: 30px;
+      }
+
+      .book form input {
+        padding: 10px;
+        color: #000;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 5px -6px black;
+      }
+      .book form textarea {
+        border: none;
+        border-radius: 10px;
+        resize: none;
+        height: 200px;
+        box-shadow: 0px 5px 5px -6px black;
+      }
+      .book .submit {
+        width: 160px;
+        font-size: 16px;
+        font-weight: 550;
+        background: #ffa500;
+        color: #fff;
+        margin-top: 10px;
+        transition: 0.5s;
+      }
+      .book .submit:hover {
+        width: 170px;
+      }
+      @media (max-width: 765px) {
+        .book {
+          padding: 0;
+        }
+        .main-text h1 {
+          padding: 20px;
+        }
+      }
+
+      /* <!----------------------------- packages section -----------------------------> */
+
+      .main-txt h1 {
+        text-align: center;
+        margin-top: 30px;
+        font-weight: 600;
+        text-shadow: 0px 1px 1px black;
+      }
+      .main-txt h1 span {
+        color: #ffa500;
+      }
+      .packages .card {
+        border-radius: 5px;
+        border: none;
+        text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
+      .packages .card img {
+        border-radius: 5px;
+      }
+      .packages .card .card-body {
+        background: transparent;
+      }
+      .packages .card .card-body h3 {
+        font-size: 25px;
+        font-weight: 600;
+      }
+      .packages .card .card-body p {
+        font-size: 15px;
+      }
+      .checked {
+        color: #ffa500;
+      }
+      .star i {
+        font-size: 15px;
+      }
+      .packages .card .card-body h6 {
+        font-size: 20px;
+      }
+      .packages .card .card-body a {
+        padding: 10px;
+        text-decoration: none;
+        background: #ffa500;
+        color: #fff;
+        border-radius: 5px;
+      }
+
+      /* <!-- -------------------services section----------------- --> */
+
+      .services {
+        background: #f9f9f9;
+        margin-top: 50px;
+      }
+      .services .card {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border: none;
+        cursor: pointer;
+      }
+      .services .card i {
+        font-size: 80px;
+        text-align: center;
+        color: #ffa500;
+        margin-top: 20px;
+      }
+      .services .card .card-body h3 {
+        font-weight: 600;
+      }
+      .services .card .card-body {
+        text-align: center;
+      }
+
+      /* <!------------------ Gallary section -----------------> */
+      .gallary {
+        margin-top: 50px;
+      }
+      .gallary .card {
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        cursor: pointer;
+      }
+      .gallary .card img {
+        border-radius: 10px;
+        transition: 0.5s;
+      }
+      .gallary .card img:hover {
+        transform: scale(1.1);
+      }
+      /* <!---------------- About section -----------------> */
+
+      .about {
+        padding: 50px;
+        margin-top: 50px;
+        background: #f9f9f9;
+      }
+      .about .card {
+        border-radius: 10px;
+      }
+      .about .card img {
+        border-radius: 10px;
+      }
+      .about h2 {
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .about p {
+        font-weight: 500;
+      }
+      #about-btn {
+        width: 150px;
+        height: 38px;
+        border: none;
+        border-radius: 5px;
+        background: #ffa500;
+        color: #fff;
+        letter-spacing: 2px;
+        font-weight: 550;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      #about-btn:hover {
+        width: 170px;
+      }
+      @media (max-width: 765px) {
+        .about {
+          padding: 0;
+        }
+      }
+
+      /* <!--------------------footer section--------------------> */
+
+      #footer{
+        width: 100%;
+        margin-top: 150px;
+        text-align: center;
+        background: #f9f9f9;
+      }
+      #footer h1{
+        font-weight: 600;
+        padding-top: 30px;
+        text-shadow: 0px 0px 1px black;
+      }
+      #footer h1 span{
+        color: #ffa500;
+      }
+      .social-link i{
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        background: black;
+        color: #fff;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .social-link i:hover{
+        background: #ffa500;
+      }
+    </style>
+  </head>
+  <body>
+    <!------------------ navbar section----------------------->
+    <nav class="navbar navbar-expand-lg" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="" id="logo"><span>T</span>ravel</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mynavbar"
+        >
+          <span><i class="bx bx-menu"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#book">Book</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#packages">Packages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallary">Gallary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" placeholder="Search" />
+            <button class="btn btn-primary" type="button">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!------------------ Home section--------------- -->
+    <div class="home">
+      <div class="content">
+        <h5>Welcome To World</h5>
+        <h1>Visit <span class="changecontent"></span></h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, dicta?
+        </p>
+        <a href="#book">Book Place</a>
+      </div>
+    </div>
+
+    <!------------------ book section----------------------- -->
+    <section class="book" id="book">
+      <div class="container">
+        <div class="main-text">
+          <h1><span>B</span>ook</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/book.png" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6 py-3 py-md-0">
+            <form action="#">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Where To"
+                required
+              /><br />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="How Many"
+                required
+              /><br />
+              <input
+                type="date"
+                class="form-control"
+                placeholder="Arrivals"
+                required
+              /><br />
+              <input
+                type="date"
+                class="form-control"
+                placeholder="Leaving"
+                required
+              /><br />
+              <textarea
+                class="form-control"
+                rows="5"
+                name="text"
+                placeholder="Enter Your Name & Details"
+              ></textarea>
+              <input type="submit" value="Book Now" class="submit" required />
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!----------------------------- packages section ----------------------------->
+
+    <section class="packages" id="packages">
+      <div class="container">
+        <div class="main-txt">
+          <h1><span>P</span>ackages</h1>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-md-0">
+            <div class="card">
+              <img src="Images/pakistan.png.jpg" alt="" />
+              <div class="card-body">
+                <h3>United Kingdom</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eaque, ipsum!
+                </p>
+                <div class="star">
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a href="book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-md-0">
+            <div class="card">
+              <img src="Images/france.png.jpg" alt="" />
+              <div class="card-body">
+                <h3>France</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eaque, ipsum!
+                </p>
+                <div class="star">
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a href="book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-md-0">
+            <div class="card">
+              <img src="Images/uk.png.jpg" alt="" />
+              <div class="card-body">
+                <h3>Pakistan</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eaque, ipsum!
+                </p>
+                <div class="star">
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a href="book">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-md-0">
+            <div class="card">
+              <img src="Images/italy.png" alt="" />
+              <div class="card-body">
+                <h3>Italy</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eaque, ipsum!
+                </p>
+                <div class="star">
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a href="book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-md-0">
+            <div class="card">
+              <img src="Images/india.png" alt="" />
+              <div class="card-body">
+                <h3>India</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eaque, ipsum!
+                </p>
+                <div class="star">
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a href="book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-md-0">
+            <div class="card">
+              <img src="Images/us.png" alt="" />
+              <div class="card-body">
+                <h3>United State</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Eaque, ipsum!
+                </p>
+                <div class="star">
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star checked"></i>
+                  <i class="bx bxs-star"></i>
+                  <i class="bx bxs-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a href="book">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------services section----------------- -->
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="main-txt">
+          <h1><span>S</span>ervices</h1>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <i class="bx bx-hotel"></i>
+              <div class="card-body">
+                <h3>Affordable Hotel</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, accusamus?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <i class="bx bx-restaurant"></i>
+              <div class="card-body">
+                <h3>Food & Drinks</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, accusamus?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <i class="bx bx-street-view"></i>
+              <div class="card-body">
+                <h3>Safty Guide</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, accusamus?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <i class="bx bx-globe"></i>
+              <div class="card-body">
+                <h3>Around The World</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, accusamus?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <i class="bx bxs-plane-alt"></i>
+              <div class="card-body">
+                <h3>Fastest Travel</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, accusamus?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <i class="bx bx-run"></i>
+              <div class="card-body">
+                <h3>Adventures</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, accusamus?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!------------------ Gallary section ----------------->
+
+    <section class="gallary" id="gallary">
+      <div class="container">
+        <div class="main-txt">
+          <h1><span>G</span>allary</h1>
+        </div>
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/gl.png" alt="" height="230px" />
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/g2.png" alt="" height="230px" />
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/g3.png" alt="" height="230px" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/g4.png" alt="" height="230px" />
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/g5.png" alt="" height="230px" />
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/g6.png" alt="" height="230px" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---------------- About section ----------------->
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="main-txt">
+          <h1>About<span>Us</span></h1>
+        </div>
+        <div class="row" style="margin-top: 50px">
+          <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+              <img src="Images/earth.png" alt="" />
+            </div>
+          </div>
+          <div class="col-md-6 py-3 py-md-0">
+            <h2>How Travel Agency Work</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Necessitatibus, quia quidem repellat harum quam sed. Optio quasi
+              incidunt quidem praesentium, omnis at autem et ratione itaque
+              dolores error quia, fugiat consectetur ab cum deleniti fuga
+              provident. Sunt ratione, voluptatibus reprehenderit neque dolorem,
+              aliquam cumque aperiam sequi ipsum recusandae est nisi?
+            </p>
+            <button id="about-btn">Read More...</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--------------------footer section-------------------->
+
+    <footer id="footer">
+      <h1><span>T</span>ravel</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati
+        asperiores aut, praesentium minima maiores nisi.
+      </p>
+      <div class="social-link">
+        <i class="bx bxl-facebook"></i>
+        <i class="bx bxl-twitter"></i>
+        <i class="bx bxl-instagram"></i>
+        <i class="bx bxl-youtube"></i>
+        <i class="bx bxl-linkedin"></i>
+      </div>
+      <div class="credit">
+        <p>Designed By <a href="#">VS Coding</a></p>
+      </div>
+      <div class="copyright">
+        <p>&copy;Copyright VS Coding. All Right Reserved</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
